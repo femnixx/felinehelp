@@ -12,7 +12,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middlware->web(append: [
+        $middleware->web(append: [
             HandleInertiaRequests::class,
         ]);
     })
