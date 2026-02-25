@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Models\Cat;
 use App\Http\Controller\CatController;
+use Intertia\Intertia;
 
 Route::get('/', function () {
     return view('welcome');
