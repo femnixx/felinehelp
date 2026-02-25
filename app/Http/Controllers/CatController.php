@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Inertia\Inertia;
 use Illuminate\Http\Request;
 use App\Models\Cat;
 
@@ -9,16 +9,20 @@ class CatController extends Controller
 {
     public function index()
     { 
-        $allCats = Cat::all();
-        return view('feline_list', ['cats' => $allCats]);
+        $allCats = \App\Models\Cat::all();
+        return Inertia::render('FelineIndex', [
+            'cats' => $allCats
+        ]);
     }
 
     public function store(Request $request) 
     {
-        Cat::create([
-            'name' => $request->name,
-            'breed' => $request->breed,
+       $validated = $request->validate([
+        'name' => 'required|max:50',
+        'breed' => 'required',
         ]);
+
+        Cat::create($validated);
         return redirect('/cats');
     }
 }

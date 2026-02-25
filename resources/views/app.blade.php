@@ -6,6 +6,6 @@
         @inertiaHead
     </head>
     <body>
-        <p>Hello World</p>
+        @inertia
     </body>
 </html>

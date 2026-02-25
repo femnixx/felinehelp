@@ -15,7 +15,8 @@
         "vite": "^7.0.7"
     },
     "dependencies": {
+        "@inertiajs/vue3": "^2.3.16",
         "@vitejs/plugin-vue": "^6.0.4",
-        "vue": "^3.5.28"
+        "vue": "^3.5.29"
     }
 }
